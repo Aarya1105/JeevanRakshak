@@ -1,67 +1,275 @@
-# Jeevanrakshak-chatboat
-India Emergency Chatbot 🤖 – AI-powered assistant providing instant hospital contacts, first aid guidance, ambulance info (108), and voice-enabled Q&amp;A across India. Features interactive robotic UI with voice input/output for real-time emergency support
-# India Emergency Chatbot 🤖
+# 🚑 Golden Hour Emergency Triage System
+AI-Powered Healthcare Decision Support & Hospital Optimization Platform
+---
+## 🧠 Overview
+**Golden Hour Emergency Triage System** is an intelligent full-stack healthcare platform designed to assist emergency responders in making **life-critical decisions within the golden hour** — the most important time after a medical emergency.
 
-**AI-Powered Emergency Assistant for India**  
+The system combines:
+* 🤖 **AI Severity Prediction**
+* ⚙️ **Constraint Optimization**
+* 🗺️ **Live Hospital Dashboard**
+* 🚑 **Ambulance Routing Simulation**
 
-This chatbot is a web-based AI assistant designed to provide **instant hospital contacts, first aid guidance, ambulance info (108), and city-specific hospital recommendations** across India. It features a **robotic-themed UI** with **voice input and output**, making it interactive and user-friendly for emergencies.
+to automatically recommend the **best hospital** for a patient based on medical condition, hospital capacity, and travel efficiency.
 
 ---
 
-## **Features**
+## 🎯 Problem Statement
 
-- 📞 **Hospital Contacts:** Instant numbers for major hospitals like AIIMS Delhi, Apollo, Fortis, etc.  
-- 🚑 **Emergency Support:** Always suggests calling 108 for emergencies.  
-- ⚕️ **First Aid Guidance:** Tips for bleeding, burns, fractures, and other emergencies.  
-- 🏥 **Hospital Specialties:** Info on cardiology, neurology, maternity, pediatrics, and more.  
-- 🕒 **Timings Info:** General hospital operating hours and emergency availability.  
-- 🎤 **Voice Input:** Speak your queries using microphone.  
-- 🔊 **Voice Output:** Chatbot speaks its responses for better accessibility.  
-- 🤖 **Robot-Themed UI:** Full-body robot background and modern chat interface.
+During emergencies, patients are often taken to **overloaded hospitals**, causing:
 
----
+* Delayed treatment
+* ICU shortages
+* Ambulance rerouting
+* Increased mortality risk
 
-## **Sample Questions You Can Ask**
-
-- "Call hospital"  
-- "Ambulance needed"  
-- "First aid for bleeding"  
-- "Hospital near me in Mumbai"  
-- "Best hospitals for heart surgery"  
-- "COVID helpline"  
-- "Child helpline number"  
+This project solves the problem using **AI + Optimization + Real-time Visualization**.
 
 ---
 
-## **Tech Stack**
+## ✨ Key Features
 
-- **Frontend:** HTML, CSS, JavaScript  
-- **Backend:** Node.js, Express.js  
-- **AI Model:** Google Gemini API (Generative AI)  
-- **Voice:** Web Speech API (`SpeechRecognition` and `SpeechSynthesis`)  
+### 🧠 AI Patient Severity Prediction
+
+* Predicts emergency severity using patient vitals:
+
+  * Age
+  * Heart Rate
+  * Blood Pressure
+  * SpO₂
+  * Temperature
+  * Symptoms
+* Automatically determines:
+
+  * ICU Requirement
+  * Ventilator Requirement
+  * Required Specialist
+
+Model Used:
+
+* **XGBoost Classifier**
+* Auto-training with synthetic dataset
 
 ---
 
-## **Setup & Run**
+### ⚙️ Smart Hospital Optimization Engine
 
-1. **Clone the repository**  
+Selects the **best hospital** using:
 
-git clone https://github.com/yourusername/india-emergency-chatbot.git
-cd india-emergency-chatbot
-Install dependencies
-npm install express cors @google/generative-ai
-Add your Gemini API key
+✅ Travel Time
+✅ Hospital Load
+✅ ICU Availability
+✅ Ventilator Availability
+✅ Specialist Matching
 
-In server.js (or index.js backend file):
+Optimization powered by:
 
-const genAI = new GoogleGenerativeAI("AIzaSyAieEPxQyL0nHJp5MQU9CzrziRKgutZoOs");
-Run the server
-node server.js
+* **Google OR-Tools Constraint Solver**
 
-Server will run at: http://localhost:3000
+---
 
-Usage
-Type your message in the input box and press Enter or click Send.
-Click the 🎤 microphone button to speak to the bot.
-Bot will reply and also speak responses automatically.
-Ask any India-wide emergency-related queries.
+### 🗺️ Live Emergency Dashboard
+
+Interactive real-time map built with **Leaflet.js**
+
+Features:
+
+* Patient location visualization
+* Hospital markers
+* Load color coding:
+
+  * 🟢 Low Load
+  * 🟡 Medium Load
+  * 🔴 High Load
+* Auto refresh every 5 seconds
+* Ambulance movement simulation
+
+---
+
+### 📊 AI Explainability Panel
+
+Shows decision transparency:
+
+* Why hospital was selected
+* Travel time analysis
+* Resource availability
+* AI severity reasoning
+
+---
+
+## 🏗️ Project Architecture
+
+```
+Patient Input
+     ↓
+AI Severity Prediction
+     ↓
+Constraint Optimization Engine
+     ↓
+Best Hospital Selection
+     ↓
+Live Map Dashboard
+```
+
+---
+
+## 📁 Project Structure
+
+```
+project/
+│
+├── app.py
+├── train_model.py
+├── optimizer.py
+├── predict.py
+├── hospitals.py
+├── severity_model.pkl
+│
+├── templates/
+│   ├── patient_form.html
+│   └── dashboard.html
+│
+├── static/
+│   ├── style.css
+│   └── script.js
+│
+└── requirements.txt
+```
+
+---
+
+## ⚙️ Tech Stack
+
+### Backend
+
+* Python
+* Flask
+* Scikit-learn
+* XGBoost
+* OR-Tools
+* Joblib
+
+### Frontend
+
+* HTML5
+* CSS3
+* JavaScript
+* Leaflet.js Maps
+
+### AI & Optimization
+
+* Machine Learning Severity Prediction
+* Constraint Optimization Algorithms
+
+---
+
+## 🚀 Installation & Setup
+
+### 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/yourusername/golden-hour-triage.git
+cd golden-hour-triage
+```
+
+---
+
+### 2️⃣ Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### 3️⃣ Run Application
+
+```bash
+python app.py
+```
+
+---
+
+### 4️⃣ Open Browser
+
+```
+http://127.0.0.1:5000
+```
+
+---
+
+## 🤖 AI Model Training
+
+The system automatically trains a model if:
+
+```
+severity_model.pkl
+```
+
+does not exist.
+
+Synthetic dataset includes:
+
+* Heart Rate (60–150)
+* SpO₂ (70–100)
+* Blood Pressure (80–180)
+* Temperature (97–104)
+* Age (1–90)
+
+No manual training required ✅
+
+---
+
+## 🗺️ Dashboard Capabilities
+
+* Real-time hospital load simulation
+* Live optimization updates
+* Ambulance route visualization
+* Emergency decision transparency
+
+---
+
+## 🎯 Use Cases
+
+* Smart City Emergency Systems
+* Ambulance Dispatch Centers
+* Disaster Management
+* Hospital Load Balancing
+* AI Healthcare Research
+
+---
+
+## 🏆 Hackathon Value Proposition
+
+✅ AI + Optimization + Visualization
+✅ Real-World Healthcare Impact
+✅ Explainable AI Decisions
+✅ Scalable Architecture
+✅ Production-Ready Concept
+
+---
+
+## 🔮 Future Enhancements
+
+* Live GPS Ambulance Tracking
+* Mass Casualty Mode
+* Voice Emergency Assistant
+* Agentic AI Dispatcher
+* Real Hospital API Integration
+* Mobile Application
+
+---
+
+## 👩‍💻 Team
+
+**HackVortex**
+
+* Hemangi Mahajan
+* Vasundhara Dongre
+* Reeya Pawar
+* Aarya Jadhav
+
+## ❤️ Acknowledgements
+
+Inspired by the importance of the **Golden Hour** in emergency medicine and the need for intelligent healthcare infrastructure.
+
