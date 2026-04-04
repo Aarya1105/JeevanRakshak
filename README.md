@@ -127,14 +127,14 @@ Real-Time Tracking System
 
 Simple & Scalable Architecture
 
-👩‍💻 Team Tech Divas
+👩‍💻 Team HackVortex
 Aarya Jadhav
 
 Reeya Pawar
 
 Hemangi Mahajan
 
-Rutuja Shinde
+Vasundhara Dongre
 
 🔮 Future Scope
 AI Severity Prediction
