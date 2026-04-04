@@ -1215,25 +1215,3 @@ document.addEventListener('DOMContentLoaded', () => {
         );
     }
 });
-
-// Image Upload Logic
-let uploadedImageBase64 = "";
-
-function previewImage(event) {
-    const file = event.target.files[0];
-
-    if (!file) return;
-
-    const reader = new FileReader();
-
-    reader.onload = function(e) {
-        const img = document.getElementById("imagePreview");
-
-        img.src = e.target.result;
-        img.classList.remove("hidden");
-
-        uploadedImageBase64 = e.target.result;
-    };
-
-    reader.readAsDataURL(file);
-}

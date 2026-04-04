@@ -430,29 +430,28 @@
                             </div>
                             
                             <!-- Image Upload for Accident -->
+                            <div id="accidentImageUpload" class="mt-4 hidden">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Upload Injury Image (Optional)</label>
+                                <input type="file" accept="image/*" onchange="analyzeInjuryImage(this)" class="w-full px-4 py-3 border border-gray-200 rounded-xl">
+                                <p id="injuryAnalysis" class="text-sm text-gray-600 mt-2"></p>
+                            </div>
                             
-<<!-- Image Upload for Accident -->
-<div id="accidentImageUpload" class="mt-4 hidden">
-    <label class="block text-sm font-medium text-gray-700 mb-1">
-        Upload Injury Image (Optional)
-    </label>
-
-    <input 
-        type="file" 
-        accept="image/*" 
-        onchange="previewImage(event)" 
-        class="w-full px-4 py-3 border border-gray-200 rounded-xl"
-    >
-
-    <!-- Image Preview -->
-    <img id="imagePreview" class="mt-3 rounded-xl hidden max-h-40 border">
-
-    <!-- AI Prediction -->
-    <p id="injuryAnalysis" class="text-sm text-gray-600 mt-2"></p>
-</div>
-    <!-- 👇 ADD THIS (IMPORTANT) -->
-    <img id="imagePreview" class="mt-3 rounded-xl hidden max-h-40 border">
-</div>
+                            <div class="mt-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Additional Notes</label>
+                                <textarea name="notes" rows="3" class="w-full px-4 py-3 border border-gray-200 rounded-xl input-focus outline-none" placeholder="Any additional information..."></textarea>
+                            </div>
+                            
+                            <div class="mt-6 flex gap-4">
+                                <button type="submit" class="flex-1 py-3 btn-primary text-white rounded-xl font-semibold">
+                                    🔍 Analyze & Get Recommendation
+                                </button>
+                                <button type="button" onclick="showDriverMenu()" class="px-6 py-3 border border-gray-300 text-gray-700 rounded-xl font-semibold hover:bg-gray-50 transition-all">
+                                    Cancel
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
 
                 <!-- AI Recommendation Result -->
                 <div id="recommendationSection" class="hidden fade-in">
@@ -740,7 +739,7 @@
                             
                             <div class="mt-6">
                                 <h3 class="font-semibold text-gray-800 mb-3">Doctors List</h3>
-                                <div id="doctorsList" class="space-y-3"></div>
+                                <div id="doctorsList" class="space-y-3 text-black"></div>
                                 <button type="button" onclick="addDoctorField()" class="mt-3 px-4 py-2 border border-purple-500 text-purple-600 rounded-xl hover:bg-purple-50  transition-all text-black bg-white">
                                     + Add Doctor
                                 </button>
@@ -763,13 +762,14 @@
                         <h2 class="text-2xl font-bold text-gray-800 mb-4">Live Ambulance Tracking</h2>
                         
                         <div class="h-96 bg-gray-100 rounded-xl overflow-hidden">
+                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCBlmL5UVP2ReR0a0LWYnRy4YdFRk8E9I"></script>
                             <iframe 
                                 width="100%" 
                                 height="100%" 
                                 style="border:0" 
                                 loading="lazy" 
                                 allowfullscreen 
-                                src="[google.com](https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83923192776!2d77.06889754725782!3d28.52758200617607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin)">
+                                src="https://maps.google.com/maps?q=${lat},${lng}&output=embed">
                             </iframe>
                         </div>
                         
