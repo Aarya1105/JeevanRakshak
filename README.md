@@ -4,6 +4,8 @@ AI-powered Golden Hour Emergency System that enables fast patient triage and sma
 🚑 JeevanRakshak — Live Ambulance & Emergency Response System
 An AI-powered emergency healthcare platform designed to reduce response time during the Golden Hour by enabling live ambulance tracking, smart hospital navigation, and real-time emergency coordination.
 
+live link : jeevanrakshak-production.up.railway.app
+
 🌍 Problem
 During medical emergencies:
 
